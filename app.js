@@ -1,12 +1,13 @@
 alert('Welcome to the secret number game!');
 
-let secretNumber = 10;
+let secretNumber = parseInt(Math.random() * 100 + 1);
 console.log(secretNumber);
 let playerChoice;
-let attemps = 1;
+let attempts = 1;
+console.log(secretNumber)
 
 while (playerChoice != secretNumber) {
-    playerChoice = prompt('Select a number between 1 to 30:');
+    playerChoice = prompt('Select a number between 1 to 100:');
 
     if (secretNumber == playerChoice) {
         break;
@@ -16,15 +17,19 @@ while (playerChoice != secretNumber) {
         } else {
             alert(`The secret number is greater than ` + playerChoice);
         }
-        attemps++;
+        attempts++;
     }
 }
 
-if (attemps > 1){
-    alert(`Congrats! You guessed the secret number! (` + secretNumber + `) with ` + attemps + ` attemps`);
-} else {
-    alert(`Congrats! You guessed the secret number! (` + secretNumber + `) with ` + attemps + ` attemp`);
-}
+let wordAttempts = attempts > 1 ? ' attempts!' : ' attempt!';
+
+alert(`Congrats! You guessed the secret number! (` + secretNumber + `) with ` + attempts + wordAttempts);
+
+//if (attemps > 1){
+//    alert(`Congrats! You guessed the secret number! (` + secretNumber + `) with ` + attemps + ` attemps`);
+//} else {
+//    alert(`Congrats! You guessed the secret number! (` + secretNumber + `) with ` + attemps + ` attemp`);
+//}
 
 
 //if (secretNumber == playerChoice) {
