@@ -1,13 +1,15 @@
 alert('Welcome to the secret number game!');
 
-let secretNumber = parseInt(Math.random() * 100 + 1);
+
+let maxNumber = 500;
+let secretNumber = parseInt(Math.random() * maxNumber + 1);
 console.log(secretNumber);
 let playerChoice;
 let attempts = 1;
 console.log(secretNumber)
 
 while (playerChoice != secretNumber) {
-    playerChoice = prompt('Select a number between 1 to 100:');
+    playerChoice = prompt('Select a number between 1 to ' + maxNumber +':');
 
     if (secretNumber == playerChoice) {
         break;
